@@ -27,7 +27,7 @@ def calculate_line_movement():
   # Check if the request was successful (status code 200)
   if response.status_code != 200:
     print(f"Error in API request. Status code: {response.status_code}")
-    print (results)
+    return results
 
   odds_data = response.json()
   # Extract the first 5 event IDs
@@ -114,13 +114,13 @@ def calculate_line_movement():
         f"from {previous_team_2_price} to {current_team_2_price} in the past {time_difference} hours."
     )
 
-    # print (results)
+    return results
 
-    print(f"{team_1} moneyline has moved {line_movement_percentage_home}% "
-        f"from {previous_team_1_price} to {current_team_1_price} in the past {time_difference} hours.")
+    # print(f"{team_1} moneyline has moved {line_movement_percentage_home}% "
+    #     f"from {previous_team_1_price} to {current_team_1_price} in the past {time_difference} hours.")
 
-    print(f"{team_2} moneyline has moved {line_movement_percentage_away}% "
-        f"from {previous_team_2_price} to {current_team_2_price} in the past {time_difference} hours.")
+    # print(f"{team_2} moneyline has moved {line_movement_percentage_away}% "
+    #     f"from {previous_team_2_price} to {current_team_2_price} in the past {time_difference} hours.")
 
 
 #onready and on message functions for discord
